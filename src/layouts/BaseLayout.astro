@@ -1,0 +1,37 @@
+---
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "KevinRuffe.com",
+  description = "Personal website of Kevin Ruffe",
+} = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+    <slot name="head" />
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="site-header">
+        <a class="site-title" href="/">{title}</a>
+      </header>
+      <main class="site-content">
+        <slot />
+      </main>
+      <footer class="site-footer">
+        <small>Built with Astro.</small>
+      </footer>
+    </div>
+  </body>
+</html>
