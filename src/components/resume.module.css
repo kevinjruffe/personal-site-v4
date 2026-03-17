@@ -1,0 +1,22 @@
+.resume-page {
+  display: grid;
+  gap: 1rem;
+}
+
+.resume-document {
+  display: block;
+  width: 100%;
+  min-height: 70vh;
+  height: 70vh;
+}
+
+.resume-actions {
+  margin: 0;
+}
+
+@media (min-width: 48rem) {
+  .resume-document {
+    min-height: 85vh;
+    height: 85vh;
+  }
+}
