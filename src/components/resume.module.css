@@ -10,10 +10,6 @@
   height: 70vh;
 }
 
-.resume-actions {
-  margin: 0;
-}
-
 @media (min-width: 48rem) {
   .resume-document {
     min-height: 85vh;

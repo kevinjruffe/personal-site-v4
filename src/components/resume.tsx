@@ -1,3 +1,4 @@
+import ResumeActions from "./resumeActions";
 import Styles from "./resume.module.css";
 
 export default function Resume() {
@@ -14,15 +15,7 @@ export default function Resume() {
           <a href="/resume.pdf">Download the resume PDF</a>.
         </p>
       </object>
-      <p className={Styles["resume-actions"]}>
-        <a href="/resume.pdf" target="_blank" rel="noreferrer">
-          Open in New Tab
-        </a>
-        <span aria-hidden="true"> | </span>
-        <a href="/resume.pdf" download>
-          Download PDF
-        </a>
-      </p>
+      <ResumeActions />
     </section>
   );
 }
