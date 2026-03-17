@@ -1,0 +1,37 @@
+---
+import type { GetStaticPaths, InferGetStaticPropsType } from "astro";
+import { getCollection } from "astro:content";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import BlogPosts from "../components/blogPosts";
+import BlogPaginationActions from "../components/blogPaginationActions";
+
+export const getStaticPaths = (async ({ paginate }) => {
+  const posts = (await getCollection("blog")).sort(
+    (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+  );
+
+  return paginate(posts, { pageSize: 10 });
+}) satisfies GetStaticPaths;
+
+type Props = InferGetStaticPropsType<typeof getStaticPaths>;
+
+const { page }: Props = Astro.props;
+
+const postContents = Object.fromEntries(
+  page.data.map((post) => [post.id, post.rendered?.html ?? ""]),
+);
+
+const title =
+  page.currentPage === 1
+    ? "KevinRuffe.com"
+    : `Page ${page.currentPage} | KevinRuffe.com`;
+---
+
+<BaseLayout title={title} description="Blog posts by Kevin Ruffe">
+  <section>
+    <h1>Kevin Ruffe</h1>
+    <p>Writing on software, books, and whatever else holds my attention.</p>
+    <BlogPosts posts={page.data} postContents={postContents} />
+    <BlogPaginationActions page={page} />
+  </section>
+</BaseLayout>
