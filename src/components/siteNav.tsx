@@ -19,7 +19,14 @@ export default function SiteNav() {
         aria-controls="site-navigation"
         onClick={() => setIsOpen((currentValue) => !currentValue)}
       >
-        Menu
+        <span className={Styles["sr-only"]}>
+          {isOpen ? "Close navigation menu" : "Open navigation menu"}
+        </span>
+        <span className={Styles["nav-toggle-lines"]} aria-hidden="true">
+          <span className={Styles["nav-toggle-line"]} />
+          <span className={Styles["nav-toggle-line"]} />
+          <span className={Styles["nav-toggle-line"]} />
+        </span>
       </button>
       <nav
         id="site-navigation"
