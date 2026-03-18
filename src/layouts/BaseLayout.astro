@@ -45,6 +45,21 @@ const {
 </html>
 
 <style>
+  :global(html) {
+    box-sizing: border-box;
+  }
+
+  :global(*),
+  :global(*::before),
+  :global(*::after) {
+    box-sizing: inherit;
+  }
+
+  :global(body) {
+    margin: 0;
+    min-height: 100vh;
+  }
+
   .site-logo {
     display: block;
     height: auto;

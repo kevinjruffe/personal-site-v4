@@ -1,4 +1,5 @@
 .nav-shell {
+  color: #215144;
   display: grid;
   gap: 0.75rem;
   justify-items: end;
@@ -6,9 +7,11 @@
 }
 
 .nav-toggle {
-  border: 1px solid currentColor;
-  background: transparent;
+  border: 1px solid #7ba583;
+  background: #f7fbf8;
   color: inherit;
+  border-radius: 6px;
+  box-shadow: 0 1px 2px rgba(33, 81, 68, 0.08);
   cursor: pointer;
   display: inline-flex;
   align-items: center;
@@ -24,7 +27,7 @@
 
 .nav-toggle:hover,
 .nav-toggle:focus-visible {
-  background: rgba(0, 0, 0, 0.06);
+  background: #dfeee4;
 }
 
 .nav-toggle:active {
@@ -92,6 +95,10 @@
 }
 
 .nav-menu {
+  background: #f7fbf8;
+  border: 1px solid rgba(123, 165, 131, 0.8);
+  border-radius: 8px;
+  box-shadow: 0 14px 30px rgba(33, 81, 68, 0.12);
   opacity: 0;
   overflow: hidden;
   pointer-events: none;
@@ -119,18 +126,27 @@
   gap: 0.75rem;
   list-style: none;
   margin: 0;
-  padding: 0.25rem 0 0;
+  padding: 0.75rem;
   text-align: right;
 }
 
 .nav-link {
+  border-radius: 6px;
   color: inherit;
+  display: inline-flex;
+  justify-content: flex-end;
+  padding: 0.45rem 0.75rem;
   text-decoration: none;
+  transition:
+    background-color 180ms ease,
+    color 180ms ease;
 }
 
 .nav-link:hover,
 .nav-link:focus-visible {
-  text-decoration: underline;
+  background: #dfeee4;
+  color: #16372e;
+  text-decoration: none;
 }
 
 @media (min-width: 48rem) {
@@ -144,6 +160,10 @@
   }
 
   .nav-menu {
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
     display: block;
     max-height: none;
     opacity: 1;
@@ -159,5 +179,9 @@
     gap: 1.5rem;
     padding: 0;
     text-align: left;
+  }
+
+  .nav-link {
+    justify-content: center;
   }
 }
