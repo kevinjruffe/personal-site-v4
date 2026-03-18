@@ -1,17 +1,23 @@
+.site-header {
+  width: 100%;
+}
+
 .site-header-inner {
-  display: grid;
+  align-items: center;
+  display: flex;
   gap: 1rem;
-  justify-items: start;
+  justify-content: space-between;
 }
 
 .site-title {
   color: inherit;
+  display: inline-flex;
   text-decoration: none;
 }
 
-@media (min-width: 48rem) {
-  .site-header-inner {
-    align-items: center;
-    grid-template-columns: auto 1fr;
-  }
+.site-logo {
+  display: block;
+  height: auto;
+  max-height: 120px;
+  width: auto;
 }

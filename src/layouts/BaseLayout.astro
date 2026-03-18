@@ -1,4 +1,6 @@
 ---
+import { Image } from "astro:assets";
+import logo from "../assets/logo.png";
 import Footer from "../components/footer";
 import Header from "../components/header";
 
@@ -25,7 +27,15 @@ const {
   </head>
   <body>
     <div class="site-shell">
-      <Header client:load />
+      <Header client:load>
+        <Image
+          src={logo}
+          alt="KevinRuffe.com logo"
+          width={180}
+          height={120}
+          class="site-logo"
+        />
+      </Header>
       <main class="site-content">
         <slot />
       </main>
@@ -33,3 +43,12 @@ const {
     </div>
   </body>
 </html>
+
+<style>
+  .site-logo {
+    display: block;
+    height: auto;
+    max-height: 120px;
+    width: auto;
+  }
+</style>

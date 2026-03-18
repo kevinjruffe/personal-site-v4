@@ -1,14 +1,19 @@
+import type { ReactNode } from "react";
 import SiteNav from "./siteNav";
 import Styles from "./header.module.css";
 
-export default function Header() {
+type Props = {
+  children?: ReactNode;
+};
+
+export default function Header({ children }: Props) {
   return (
     <header className={Styles["site-header"]}>
       <div className={Styles["site-header-inner"]}>
-        <SiteNav />
-        <a className={Styles["site-title"]} href="/">
-          SOME_LOGO_HERE
+        <a className={Styles["site-title"]} href="/" aria-label="KevinRuffe.com home">
+          {children}
         </a>
+        <SiteNav />
       </div>
     </header>
   );
