@@ -14,3 +14,30 @@
 .post-content a:hover {
   text-decoration: none;
 }
+
+.return-link {
+  border: 1px solid transparent;
+  border-radius: 6px;
+  color: #215144;
+  display: inline-block;
+  font-size: 1.75rem;
+  line-height: 1;
+  padding: 0.1rem 0.35rem;
+  transition:
+    background-color 180ms ease,
+    border-color 180ms ease,
+    color 180ms ease,
+    transform 180ms ease;
+}
+
+.return-link:hover,
+.return-link:focus-visible {
+  background: #dfeee4;
+  border-color: #7ba583;
+  color: #16372e;
+  text-decoration: none;
+}
+
+.return-link:active {
+  transform: scale(0.98);
+}

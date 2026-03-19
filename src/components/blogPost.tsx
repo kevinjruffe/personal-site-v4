@@ -16,11 +16,6 @@ export default function BlogPost({
 }: Props) {
   return (
     <article>
-      {isNonIndexPage && (
-        <p>
-          <a href="/">Back to blog</a>
-        </p>
-      )}
       <h1
         className={
           Styles[isNonIndexPage ? "post-title" : "post-title-on-index"]
@@ -34,6 +29,17 @@ export default function BlogPost({
         </time>
       </p>
       <div className={Styles["post-content"]}>{children}</div>
+      {isNonIndexPage && (
+        <p>
+          <a
+            href="/"
+            aria-label="Back to blog"
+            className={Styles["return-link"]}
+          >
+            ←
+          </a>
+        </p>
+      )}
     </article>
   );
 }
