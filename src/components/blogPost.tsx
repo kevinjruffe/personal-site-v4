@@ -21,7 +21,11 @@ export default function BlogPost({
           <a href="/">Back to blog</a>
         </p>
       )}
-      <h1 className={Styles[isNonIndexPage ? "" : "post-title-on-index"]}>
+      <h1
+        className={
+          Styles[isNonIndexPage ? "post-title" : "post-title-on-index"]
+        }
+      >
         <a href={`/blog/${post.id}`}>{post.data.title}</a>
       </h1>
       <p>
