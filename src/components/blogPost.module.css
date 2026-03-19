@@ -1,0 +1,12 @@
+.post-title-on-index {
+  font-size: 1.5rem;
+}
+
+.post-content a {
+  text-decoration: underline;
+  font-style: italic;
+}
+
+.post-content a:hover {
+  text-decoration: none;
+}

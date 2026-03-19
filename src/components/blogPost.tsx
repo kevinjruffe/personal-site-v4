@@ -1,5 +1,6 @@
 import type { CollectionEntry } from "astro:content";
 import type { ReactNode } from "react";
+import Styles from "./blogPost.module.css";
 import { dateFormatter } from "../utils";
 
 type Props = {
@@ -20,7 +21,7 @@ export default function BlogPost({
           <a href="/">Back to blog</a>
         </p>
       )}
-      <h1>
+      <h1 className={Styles[isNonIndexPage ? "" : "post-title-on-index"]}>
         <a href={`/blog/${post.id}`}>{post.data.title}</a>
       </h1>
       <p>
@@ -28,7 +29,7 @@ export default function BlogPost({
           {dateFormatter(post.data.pubDate)}
         </time>
       </p>
-      {children}
+      <div className={Styles["post-content"]}>{children}</div>
     </article>
   );
 }
