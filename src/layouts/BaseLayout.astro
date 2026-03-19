@@ -5,11 +5,13 @@ import Footer from "../components/footer";
 import Header from "../components/header";
 
 interface Props {
+  contentMaxWidth?: string;
   title?: string;
   description?: string;
 }
 
 const {
+  contentMaxWidth = "65ch",
   title = "KevinRuffe.com",
   description = "Personal website of Kevin Ruffe",
 } = Astro.props;
@@ -37,7 +39,7 @@ const {
           class="site-logo"
         />
       </Header>
-      <main class="site-content">
+      <main class="site-content" style={`--content-max-width: ${contentMaxWidth};`}>
         <slot />
       </main>
       <Footer />
@@ -71,7 +73,7 @@ const {
   .site-content {
     flex: 1;
     margin: 0 auto;
-    max-width: 65ch;
+    max-width: var(--content-max-width);
     padding: 1.5rem 1rem 3rem;
     width: 100%;
   }
