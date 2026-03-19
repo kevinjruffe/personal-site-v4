@@ -9,6 +9,8 @@
     "astro": "astro",
     "build": "astro build",
     "dev": "astro dev",
+    "lint": "oxlint",
+    "lint:fix": "oxlint --fix",
     "preview": "astro preview",
     "type-check": "tsc --noEmit"
   },
@@ -22,6 +24,7 @@
   "devDependencies": {
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
+    "oxlint": "^1.56.0",
     "typescript": "^5.9.3"
   }
 }
