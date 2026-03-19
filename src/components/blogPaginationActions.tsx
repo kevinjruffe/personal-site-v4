@@ -7,7 +7,7 @@ type Props = {
 };
 
 export default function BlogPaginationActions({ page }: Props) {
-  return (
+  return page.total > page.size ? (
     <nav aria-label="Pagination" className={Styles["pagination"]}>
       {page.url.prev ? (
         <a href={page.url.prev} aria-label="Newer posts" className={Styles["pagination-arrow"]}>
@@ -37,5 +37,5 @@ export default function BlogPaginationActions({ page }: Props) {
         </span>
       )}
     </nav>
-  );
+  ) : null;
 }
