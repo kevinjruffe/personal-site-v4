@@ -4,9 +4,7 @@ export type BlogPost = CollectionEntry<"blog">;
 export type BlogTag = BlogPost["data"]["tags"][number];
 
 export function sortBlogPosts(posts: BlogPost[]) {
-  return posts.sort(
-    (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
-  );
+  return posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 }
 
 export function getAllTags(posts: BlogPost[]) {
