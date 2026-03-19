@@ -27,8 +27,11 @@ const title =
 <BaseLayout title={title} description="Blog posts by Kevin Ruffe">
   <section>
     <h1>Thoughts</h1>
-    <p>Writing on software, books, and whatever else holds my attention.</p>
-    <p>You can find the topics I've written on <a href="/tags/">here</a>.</p>
+    <p>
+      Blog posts, links to articles or videos I'm reading, reviews of this and
+      that. This is a space for me to unload my mind.
+    </p>
+    <p>You can find all the topics I've covered <a href="/tags/">here</a>.</p>
     <BlogPosts posts={page.data} postContents={postContents} />
     <BlogPaginationActions page={page} />
   </section>
