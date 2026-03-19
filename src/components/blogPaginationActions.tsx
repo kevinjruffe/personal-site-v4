@@ -1,5 +1,6 @@
 import type { Page } from "astro";
 import type { CollectionEntry } from "astro:content";
+import Styles from "./blogPaginationActions.module.css";
 
 type Props = {
   page: Page<CollectionEntry<"blog">>;
@@ -7,7 +8,7 @@ type Props = {
 
 export default function BlogPaginationActions({ page }: Props) {
   return (
-    <nav aria-label="Pagination">
+    <nav aria-label="Pagination" className={Styles["pagination"]}>
       {page.url.prev ? (
         <a href={page.url.prev}>Newer posts</a>
       ) : (

@@ -1,7 +1,10 @@
+import Styles from "./footer.module.css";
+
 export default function Footer() {
   return (
-    <footer className="site-footer">
+    <footer className={Styles["site-footer"]}>
       <div
+        className={Styles["footer-copy"]}
         title="Henceforth I ask not good-fortune, I myself am good-fortune,
 Henceforth I whimper no more, postpone no more, need nothing,
 Done with indoor complaints, libraries, querulous criticisms,

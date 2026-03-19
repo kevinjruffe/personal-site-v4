@@ -1,5 +1,6 @@
 import type { CollectionEntry } from "astro:content";
 import BlogPost from "./blogPost";
+import Styles from "./blogPosts.module.css";
 
 type Props = {
   posts: CollectionEntry<"blog">[];
@@ -8,13 +9,15 @@ type Props = {
 
 export default function BlogPosts({ posts, postContents }: Props) {
   return (
-    <ol>
+    <ol className={Styles["post-list"]}>
       {posts.map((post) => (
-        <BlogPost key={post.id} post={post}>
-          <div
-            dangerouslySetInnerHTML={{ __html: postContents[post.id] ?? "" }}
-          />
-        </BlogPost>
+        <li key={post.id} className={Styles["post-list-item"]}>
+          <BlogPost post={post}>
+            <div
+              dangerouslySetInnerHTML={{ __html: postContents[post.id] ?? "" }}
+            />
+          </BlogPost>
+        </li>
       ))}
     </ol>
   );

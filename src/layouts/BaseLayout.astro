@@ -62,10 +62,31 @@ const {
     min-height: 100vh;
   }
 
+  .site-shell {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  .site-content {
+    flex: 1;
+    margin: 0 auto;
+    max-width: 65ch;
+    padding: 1.5rem 1rem 3rem;
+    width: 100%;
+  }
+
   .site-logo {
     display: block;
     height: auto;
     max-height: 120px;
     width: auto;
+  }
+
+  @media (min-width: 48rem) {
+    .site-content {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
   }
 </style>

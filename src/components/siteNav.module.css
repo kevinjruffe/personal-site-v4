@@ -111,7 +111,7 @@
     opacity 220ms ease,
     transform 220ms ease;
   max-height: 0;
-  min-width: 11rem;
+  min-width: 8rem;
 }
 
 .nav-menu[data-open="true"] {

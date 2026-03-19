@@ -1,0 +1,14 @@
+.post-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.post-list-item {
+  border-top: 3px double #7ba583;
+  padding-top: 1.5rem;
+}
+
+.post-list-item + .post-list-item {
+  margin-top: 2rem;
+}

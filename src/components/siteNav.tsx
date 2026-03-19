@@ -2,7 +2,7 @@ import { useState } from "react";
 import Styles from "./siteNav.module.css";
 
 const links = [
-  { href: "/", label: "Blog" },
+  { href: "/", label: "Thoughts" },
   { href: "/about", label: "About" },
   { href: "/resume", label: "Resume" },
 ];
