@@ -4,7 +4,12 @@ import { getCollection } from "astro:content";
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import BlogPaginationActions from "../../../components/blogPaginationActions";
 import BlogPosts from "../../../components/blogPosts";
-import { getAllTags, getPostsByTag, sortBlogPosts } from "../../../utils/blog";
+import {
+  getAllTags,
+  getPostContents,
+  getPostsByTag,
+  sortBlogPosts,
+} from "../../../utils/blog";
 
 export const getStaticPaths = (async ({ paginate }) => {
   const posts = sortBlogPosts(await getCollection("blog"));
@@ -23,9 +28,7 @@ type Props = InferGetStaticPropsType<typeof getStaticPaths>;
 
 const { page, tag }: Props = Astro.props;
 
-const postContents = Object.fromEntries(
-  page.data.map((post) => [post.id, post.rendered?.html ?? ""]),
-);
+const postContents = getPostContents(page.data);
 
 const title =
   page.currentPage === 1

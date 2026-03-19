@@ -1,10 +1,10 @@
-import type { CollectionEntry } from "astro:content";
+import type { BlogPost, BlogTag } from "../types";
 
-export type BlogPost = CollectionEntry<"blog">;
-export type BlogTag = BlogPost["data"]["tags"][number];
-
-export function sortBlogPosts(posts: BlogPost[]) {
-  return posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+export function dateFormatter(date: Date) {
+  return new Intl.DateTimeFormat("en-US", {
+    dateStyle: "long",
+    timeZone: "UTC",
+  }).format(date);
 }
 
 export function getAllTags(posts: BlogPost[]) {
@@ -13,4 +13,12 @@ export function getAllTags(posts: BlogPost[]) {
 
 export function getPostsByTag(posts: BlogPost[], tag: BlogTag) {
   return posts.filter((post) => post.data.tags.includes(tag));
+}
+
+export function getPostContents(posts: BlogPost[]) {
+  return Object.fromEntries(posts.map((post) => [post.id, post.rendered?.html ?? ""]));
+}
+
+export function sortBlogPosts(posts: BlogPost[]) {
+  return posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 }

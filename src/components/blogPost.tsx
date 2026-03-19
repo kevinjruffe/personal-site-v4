@@ -1,7 +1,7 @@
 import type { CollectionEntry } from "astro:content";
 import type { ReactNode } from "react";
 import Styles from "./blogPost.module.css";
-import { dateFormatter } from "../utils";
+import { dateFormatter } from "../utils/blog";
 
 type Props = {
   children?: ReactNode;
