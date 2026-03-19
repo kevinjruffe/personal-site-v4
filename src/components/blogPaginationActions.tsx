@@ -10,19 +10,39 @@ export default function BlogPaginationActions({ page }: Props) {
   return (
     <nav aria-label="Pagination" className={Styles["pagination"]}>
       {page.url.prev ? (
-        <a href={page.url.prev}>Newer posts</a>
+        <a
+          href={page.url.prev}
+          aria-label="Newer posts"
+          className={Styles["pagination-arrow"]}
+        >
+          ←
+        </a>
       ) : (
-        <span>Newer posts</span>
+        <span
+          aria-hidden="true"
+          className={`${Styles["pagination-arrow"]} ${Styles["pagination-placeholder"]}`}
+        >
+          ←
+        </span>
       )}
-      {" | "}
-      <span>
+      <span className={Styles["pagination-label"]}>
         Page {page.currentPage} of {page.lastPage}
       </span>
-      {" | "}
       {page.url.next ? (
-        <a href={page.url.next}>Older posts</a>
+        <a
+          href={page.url.next}
+          aria-label="Older posts"
+          className={Styles["pagination-arrow"]}
+        >
+          →
+        </a>
       ) : (
-        <span>Older posts</span>
+        <span
+          aria-hidden="true"
+          className={`${Styles["pagination-arrow"]} ${Styles["pagination-placeholder"]}`}
+        >
+          →
+        </span>
       )}
     </nav>
   );

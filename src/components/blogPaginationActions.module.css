@@ -1,6 +1,38 @@
 .pagination {
-  display: flex;
-  gap: 0.5rem;
+  align-items: center;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: auto auto auto;
   justify-content: center;
   margin-top: 3rem;
+}
+
+.pagination-arrow {
+  border: 1px solid transparent;
+  border-radius: 6px;
+  color: #215144;
+  display: inline-block;
+  font-size: 1.75rem;
+  line-height: 1;
+  padding: 0.1rem 0.35rem;
+  transition:
+    background-color 180ms ease,
+    border-color 180ms ease,
+    color 180ms ease;
+}
+
+.pagination-arrow:hover,
+.pagination-arrow:focus-visible {
+  background: #dfeee4;
+  border-color: #7ba583;
+  color: #16372e;
+  text-decoration: none;
+}
+
+.pagination-label {
+  color: #215144;
+}
+
+.pagination-placeholder {
+  visibility: hidden;
 }
