@@ -37,11 +37,7 @@ export default function SiteNav() {
         <ul className={Styles["nav-list"]}>
           {links.map((link) => (
             <li key={link.href}>
-              <a
-                href={link.href}
-                className={Styles["nav-link"]}
-                onClick={() => setIsOpen(false)}
-              >
+              <a href={link.href} className={Styles["nav-link"]} onClick={() => setIsOpen(false)}>
                 {link.label}
               </a>
             </li>

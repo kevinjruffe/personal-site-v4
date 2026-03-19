@@ -10,11 +10,7 @@ export default function BlogPaginationActions({ page }: Props) {
   return (
     <nav aria-label="Pagination" className={Styles["pagination"]}>
       {page.url.prev ? (
-        <a
-          href={page.url.prev}
-          aria-label="Newer posts"
-          className={Styles["pagination-arrow"]}
-        >
+        <a href={page.url.prev} aria-label="Newer posts" className={Styles["pagination-arrow"]}>
           ←
         </a>
       ) : (
@@ -29,11 +25,7 @@ export default function BlogPaginationActions({ page }: Props) {
         Page {page.currentPage} of {page.lastPage}
       </span>
       {page.url.next ? (
-        <a
-          href={page.url.next}
-          aria-label="Older posts"
-          className={Styles["pagination-arrow"]}
-        >
+        <a href={page.url.next} aria-label="Older posts" className={Styles["pagination-arrow"]}>
           →
         </a>
       ) : (

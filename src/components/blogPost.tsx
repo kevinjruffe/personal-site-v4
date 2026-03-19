@@ -9,33 +9,19 @@ type Props = {
   post: CollectionEntry<"blog">;
 };
 
-export default function BlogPost({
-  children,
-  isNonIndexPage = false,
-  post,
-}: Props) {
+export default function BlogPost({ children, isNonIndexPage = false, post }: Props) {
   return (
     <article>
-      <h1
-        className={
-          Styles[isNonIndexPage ? "post-title" : "post-title-on-index"]
-        }
-      >
+      <h1 className={Styles[isNonIndexPage ? "post-title" : "post-title-on-index"]}>
         <a href={`/blog/${post.id}`}>{post.data.title}</a>
       </h1>
       <p>
-        <time dateTime={post.data.pubDate.toISOString()}>
-          {dateFormatter(post.data.pubDate)}
-        </time>
+        <time dateTime={post.data.pubDate.toISOString()}>{dateFormatter(post.data.pubDate)}</time>
       </p>
       <div className={Styles["post-content"]}>{children}</div>
       {isNonIndexPage && (
         <p>
-          <a
-            href="/"
-            aria-label="Back to blog"
-            className={Styles["return-link"]}
-          >
+          <a href="/" aria-label="Back to blog" className={Styles["return-link"]}>
             ←
           </a>
         </p>

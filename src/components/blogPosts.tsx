@@ -13,9 +13,7 @@ export default function BlogPosts({ posts, postContents }: Props) {
       {posts.map((post) => (
         <li key={post.id} className={Styles["post-list-item"]}>
           <BlogPost post={post}>
-            <div
-              dangerouslySetInnerHTML={{ __html: postContents[post.id] ?? "" }}
-            />
+            <div dangerouslySetInnerHTML={{ __html: postContents[post.id] ?? "" }} />
           </BlogPost>
         </li>
       ))}
