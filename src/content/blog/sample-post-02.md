@@ -2,6 +2,7 @@
 title: "Sample Post 02"
 description: "A short note about shaping a clean blog architecture."
 pubDate: "2026-03-02"
+tags: ["two"]
 ---
 
 The second sample entry focuses on site structure.

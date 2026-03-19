@@ -2,6 +2,7 @@
 title: "Sample Post 05"
 description: "A placeholder essay on keeping a blog index focused."
 pubDate: "2026-03-05"
+tags: ["one", "three"]
 ---
 
 A blog homepage does not need to do very much.

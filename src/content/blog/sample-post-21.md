@@ -2,6 +2,7 @@
 title: "Sample Post 21"
 description: "The newest sample post, NOW FOR REAL closing out the initial collection seed."
 pubDate: "2026-03-21"
+tags: ["three"]
 ---
 
 This is the twenty-first sample post and the newest entry in the seed set.

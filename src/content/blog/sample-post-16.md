@@ -2,6 +2,7 @@
 title: "Sample Post 16"
 description: "A placeholder essay on using sample data intentionally."
 pubDate: "2026-03-16"
+tags: ["one", "two"]
 ---
 
 Sample data should be realistic enough to pressure-test the structure.

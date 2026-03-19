@@ -2,6 +2,7 @@
 title: "Sample Post 08"
 description: "A sample post on keeping post metadata intentionally small."
 pubDate: "2026-03-08"
+tags: ["two"]
 ---
 
 Metadata is only useful when it earns its keep.

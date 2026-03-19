@@ -15,6 +15,14 @@
   text-decoration: none;
 }
 
+.post-tags {
+  color: #215144;
+}
+
+.post-tags-label {
+  font-variant: small-caps;
+}
+
 .return-link {
   border: 1px solid transparent;
   border-radius: 6px;

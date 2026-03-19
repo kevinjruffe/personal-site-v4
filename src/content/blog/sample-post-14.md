@@ -2,6 +2,7 @@
 title: "Sample Post 14"
 description: "A short article on practical defaults for a text-first site."
 pubDate: "2026-03-14"
+tags: ["two"]
 ---
 
 Practical defaults beat elaborate abstractions for a blog.

@@ -2,6 +2,7 @@
 title: "Sample Post 11"
 description: "A sample entry for the second page of the paginated index."
 pubDate: "2026-03-11"
+tags: ["one", "three"]
 ---
 
 This entry starts the second page of the blog listing.

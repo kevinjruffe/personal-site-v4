@@ -2,6 +2,7 @@
 title: "Sample Post 06"
 description: "A brief sample about writing content before design is final."
 pubDate: "2026-03-06"
+tags: ["two", "three"]
 ---
 
 It is useful to have real content in place early.

@@ -2,6 +2,7 @@
 title: "Sample Post 12"
 description: "A sample note on keeping archives easy to scan."
 pubDate: "2026-03-12"
+tags: ["two", "three"]
 ---
 
 Readers skim lists before they commit to a full post.

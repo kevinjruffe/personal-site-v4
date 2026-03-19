@@ -1,0 +1,19 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import TagsList from "../../components/tagsList";
+import { getAllTags, sortBlogPosts } from "../../utils/blog";
+
+const posts = sortBlogPosts(await getCollection("blog"));
+const tags = getAllTags(posts);
+---
+
+<BaseLayout
+  title="Topics | KevinRuffe.com"
+  description="Browse blog posts by topic"
+>
+  <section>
+    <h1>Topics</h1>
+    <TagsList tags={tags} />
+  </section>
+</BaseLayout>

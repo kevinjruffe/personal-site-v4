@@ -2,6 +2,7 @@
 title: "Sample Post 17"
 description: "A sample note about keeping route generation explicit."
 pubDate: "2026-03-17"
+tags: ["one", "three"]
 ---
 
 Generated routes are easier to trust when the code remains explicit.

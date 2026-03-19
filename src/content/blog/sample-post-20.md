@@ -2,6 +2,7 @@
 title: "Sample Post 20"
 description: "The newest sample post, closing out the initial collection seed."
 pubDate: "2026-03-20"
+tags: ["two"]
 ---
 
 This is the twentieth sample post and the newest entry in the seed set.

@@ -2,6 +2,7 @@
 title: "Sample Post 04"
 description: "A sample entry about pagination and reader experience."
 pubDate: "2026-03-04"
+tags: ["one", "two"]
 ---
 
 Pagination is mostly a reader experience problem.

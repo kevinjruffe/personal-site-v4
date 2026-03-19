@@ -2,6 +2,7 @@
 title: "Sample Post 19"
 description: "A sample article about static archives staying useful over time."
 pubDate: "2026-03-19"
+tags: ["one"]
 ---
 
 An archive is one of the quiet strengths of a personal site.

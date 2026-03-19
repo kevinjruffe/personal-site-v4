@@ -2,6 +2,7 @@
 title: "Sample Post 09"
 description: "A placeholder article about static generation."
 pubDate: "2026-03-09"
+tags: ["three"]
 ---
 
 Static generation still makes a lot of sense for a personal site.

@@ -2,6 +2,7 @@
 title: "Sample Post 07"
 description: "A note on using typed frontmatter for blog entries."
 pubDate: "2026-03-07"
+tags: ["one"]
 ---
 
 Typed frontmatter pays off quickly.

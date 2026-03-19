@@ -2,6 +2,7 @@
 title: "Sample Post 10"
 description: "A midpoint sample post about route conventions in Astro."
 pubDate: "2026-03-10"
+tags: ["one", "two"]
 ---
 
 Astro's file-based routing stays easy to reason about as long as you lean into the conventions.

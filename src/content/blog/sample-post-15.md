@@ -2,6 +2,7 @@
 title: "Sample Post 15"
 description: "A sample post reflecting on publishing cadence."
 pubDate: "2026-03-15"
+tags: ["three"]
 ---
 
 Most personal blogs are not high-volume publications.

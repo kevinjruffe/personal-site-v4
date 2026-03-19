@@ -19,6 +19,17 @@ export default function BlogPost({ children, isNonIndexPage = false, post }: Pro
         <time dateTime={post.data.pubDate.toISOString()}>{dateFormatter(post.data.pubDate)}</time>
       </p>
       <div className={Styles["post-content"]}>{children}</div>
+      <p className={Styles["post-tags"]}>
+        <span aria-hidden="true">🏷️ </span>
+        <span className={Styles["post-tags-label"]}>Topics</span>
+        {": "}
+        {post.data.tags.map((tag, index) => (
+          <span key={tag}>
+            {index > 0 && ", "}
+            <a href={`/tags/${tag}/`}>{tag}</a>
+          </span>
+        ))}
+      </p>
       {isNonIndexPage && (
         <p>
           <a href="/" aria-label="Back to blog" className={Styles["return-link"]}>

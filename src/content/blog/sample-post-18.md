@@ -2,6 +2,7 @@
 title: "Sample Post 18"
 description: "A short post on separating listing pages from post pages."
 pubDate: "2026-03-18"
+tags: ["two", "three"]
 ---
 
 Listing pages and individual post pages serve different purposes.

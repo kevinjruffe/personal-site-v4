@@ -1,0 +1,43 @@
+---
+import type { GetStaticPaths, InferGetStaticPropsType } from "astro";
+import { getCollection } from "astro:content";
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import BlogPaginationActions from "../../../components/blogPaginationActions";
+import BlogPosts from "../../../components/blogPosts";
+import { getAllTags, getPostsByTag, sortBlogPosts } from "../../../utils/blog";
+
+export const getStaticPaths = (async ({ paginate }) => {
+  const posts = sortBlogPosts(await getCollection("blog"));
+  const tags = getAllTags(posts);
+
+  return tags.flatMap((tag) =>
+    paginate(getPostsByTag(posts, tag), {
+      pageSize: 10,
+      params: { tag },
+      props: { tag },
+    }),
+  );
+}) satisfies GetStaticPaths;
+
+type Props = InferGetStaticPropsType<typeof getStaticPaths>;
+
+const { page, tag }: Props = Astro.props;
+
+const postContents = Object.fromEntries(
+  page.data.map((post) => [post.id, post.rendered?.html ?? ""]),
+);
+
+const title =
+  page.currentPage === 1
+    ? `Topic: ${tag} | KevinRuffe.com`
+    : `Topic: ${tag}, Page ${page.currentPage} | KevinRuffe.com`;
+---
+
+<BaseLayout title={title} description={`Blog posts on the topic ${tag}`}>
+  <h1>Topic: {tag}</h1>
+  <p>
+    Posts filed under <a href="/tags/">all topics</a> / {tag}.
+  </p>
+  <BlogPosts posts={page.data} postContents={postContents} />
+  <BlogPaginationActions page={page} />
+</BaseLayout>

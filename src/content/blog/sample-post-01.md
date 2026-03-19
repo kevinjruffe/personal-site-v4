@@ -2,6 +2,7 @@
 title: "Sample Post 01"
 description: "An opening sample post for the new Astro content collection."
 pubDate: "2026-03-01"
+tags: ["one"]
 ---
 
 This is the first sample blog post for the new personal site.

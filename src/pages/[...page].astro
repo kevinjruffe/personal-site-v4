@@ -4,11 +4,10 @@ import { getCollection } from "astro:content";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import BlogPosts from "../components/blogPosts";
 import BlogPaginationActions from "../components/blogPaginationActions";
+import { sortBlogPosts } from "../utils/blog";
 
 export const getStaticPaths = (async ({ paginate }) => {
-  const posts = (await getCollection("blog")).sort(
-    (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
-  );
+  const posts = sortBlogPosts(await getCollection("blog"));
 
   return paginate(posts, { pageSize: 10 });
 }) satisfies GetStaticPaths;
@@ -31,6 +30,7 @@ const title =
   <section>
     <h1>Thoughts</h1>
     <p>Writing on software, books, and whatever else holds my attention.</p>
+    <p>You can find the topics I've written on <a href="/tags/">here</a>.</p>
     <BlogPosts posts={page.data} postContents={postContents} />
     <BlogPaginationActions page={page} />
   </section>
