@@ -31,6 +31,7 @@
   font-size: 1.75rem;
   line-height: 1;
   padding: 0.1rem 0.35rem;
+  text-decoration: none;
   transition:
     background-color 180ms ease,
     border-color 180ms ease,
@@ -43,7 +44,6 @@
   background: #dfeee4;
   border-color: #7ba583;
   color: #16372e;
-  text-decoration: none;
 }
 
 .return-link:active {

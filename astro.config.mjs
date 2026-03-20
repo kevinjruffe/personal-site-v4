@@ -11,6 +11,11 @@ export default defineConfig({
       name: "Newsreader",
       cssVariable: "--font-newsreader",
     },
+    {
+      provider: fontProviders.fontsource(),
+      name: "Fira Code",
+      cssVariable: "--font-fira-code",
+    },
   ],
   integrations: [react(), mdx()],
 });

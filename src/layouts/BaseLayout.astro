@@ -21,6 +21,7 @@ const {
   <head>
     <meta charset="utf-8" />
     <Font cssVariable="--font-newsreader" />
+    <Font cssVariable="--font-fira-code" />
     <link rel="icon" href="/favicon.ico" sizes="any" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
@@ -92,6 +93,11 @@ const {
   :global(a:focus-visible) {
     color: #16372e;
     text-decoration: none;
+  }
+
+  :global(pre) {
+    font-family: var(--font-fira-code), monospace;
+    color: #303030;
   }
 
   .site-shell {
