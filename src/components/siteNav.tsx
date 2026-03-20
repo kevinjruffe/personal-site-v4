@@ -33,6 +33,8 @@ export default function SiteNav() {
         className={Styles["nav-menu"]}
         data-open={isOpen ? "true" : "false"}
         aria-label="Primary"
+        aria-hidden={isOpen ? undefined : true}
+        hidden={!isOpen}
       >
         <ul className={Styles["nav-list"]}>
           {links.map((link) => (
