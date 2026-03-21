@@ -1,43 +1,20 @@
-# Astro Starter Kit: Minimal
+# KevinRuffe.com | Version 4
 
-```sh
-npm create astro@latest -- --template minimal
-```
+## Another crack at a blogging site?
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+I periodically change the code backing my personal site, usually because I want to learn some technology a little better and I've lost momentum on my blogging. In this case, both were true again. I did want to start writing again, and the tech I wanted to get more familiar with was Astro and Codex.
 
-## 🚀 Project Structure
+Astro I've been using at work over the past year, but having been the inheritor of most of the decisions on the repo structure and libraries meant never feeling like I truly knew all the framework was capable of. This time I've done an end-to-end reading of the documentation to understand exactly how to best use Astro. It's been a fantastic experience and I have a lot of confidence going into two new projects at work where I'll be using it.
 
-Inside of your Astro project, you'll see the following folders and files:
+I've been a heavy user of GitHub Copilot, ChatGPT/Gemini/Claude, but I hadn't done much with Claude Code or OpenAI's Codex until recently. The former I've been using at work to great effect, but I wanted to play with Codex more to compare them. I have to say, using Codex in the course of making this site has made me a believer. Sure, it's not perfect. A small amount of the code written was more verbose than it needed to be and some of the recommendations Codex made I decided to go against, but on the whole Codex sped up the process of coding this site at least 5X. I'm not exaggerating. If anything, that might be giving Codex too little credit.
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+## NPM Run Commands
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+- `astro`: trigger the Astro CLI
+- `build`: generate a new static build
+- `dev`: run the dev server
+- `fmt`: format the code
+- `lint`: lint the code
+- `lint:fix`: lint and correct findings
+- `preview`: serve the static site output by `build`
+- `type-check`: check for TS errors
