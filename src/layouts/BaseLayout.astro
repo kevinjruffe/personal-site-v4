@@ -1,6 +1,8 @@
 ---
+import { Image } from "astro:assets";
+import logo from "../assets/logo.png";
 import Footer from "../components/footer";
-import Header from "../components/header.astro";
+import Header from "../components/header";
 
 interface Props {
   contentMaxWidth?: string;
@@ -27,7 +29,15 @@ const {
   </head>
   <body>
     <div class="site-shell">
-      <Header />
+      <Header client:load>
+        <Image
+          src={logo}
+          alt="KevinRuffe.com logo"
+          width={180}
+          height={120}
+          class="site-logo"
+        />
+      </Header>
       <main
         class="site-content"
         style={`--content-max-width: ${contentMaxWidth};`}
