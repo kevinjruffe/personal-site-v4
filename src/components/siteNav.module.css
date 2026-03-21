@@ -4,6 +4,7 @@
   gap: 0.75rem;
   justify-items: end;
   position: relative;
+  z-index: 11;
 }
 
 .nav-toggle {
@@ -112,6 +113,7 @@
     transform 220ms ease;
   max-height: 0;
   min-width: 8rem;
+  z-index: 12;
 }
 
 .nav-menu[data-open="true"] {
