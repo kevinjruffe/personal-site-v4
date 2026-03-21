@@ -129,6 +129,9 @@ const socialImageUrl = new URL(logo.src, Astro.site ?? Astro.url).toString();
   }
 
   :global(pre) {
+    background-color: #f7fbf8;
+    border: 1px solid rgba(123, 165, 131, 0.45);
+    border-radius: 8px;
     font-family:
       ui-monospace, "SFMono-Regular", SFMono-Regular, Menlo, Monaco, Consolas,
       "Liberation Mono", "Courier New", monospace;
@@ -136,6 +139,51 @@ const socialImageUrl = new URL(logo.src, Astro.site ?? Astro.url).toString();
     line-height: 1.6;
     max-width: 100%;
     overflow-x: auto;
+    padding: 1rem 1.25rem;
+    position: relative;
+    scrollbar-color: #7ba583 #e7efe9;
+    scrollbar-width: thin;
+  }
+
+  :global(pre::-webkit-scrollbar) {
+    height: 0.7rem;
+  }
+
+  :global(pre::-webkit-scrollbar-track) {
+    background: #dfeee4;
+    border-radius: 999px;
+  }
+
+  :global(pre::-webkit-scrollbar-thumb) {
+    background: #7ba583;
+    border: 2px solid #dfeee4;
+    border-radius: 999px;
+  }
+
+  @media (max-width: 32rem) {
+    :global(pre) {
+      padding-top: 2.75rem;
+    }
+
+    :global(pre::before) {
+      background: rgba(255, 255, 255, 0.92);
+      border: 1px solid rgba(123, 165, 131, 0.55);
+      border-radius: 999px;
+      color: #215144;
+      content: "Scroll →";
+      font-family:
+        ui-serif, "Iowan Old Style", "Palatino Linotype", "Book Antiqua",
+        Palatino, Baskerville, "Times New Roman", Times, serif;
+      font-size: 0.8rem;
+      font-style: italic;
+      letter-spacing: 0.02em;
+      line-height: 1;
+      padding: 0.35rem 0.65rem;
+      position: absolute;
+      right: 1rem;
+      top: 0.75rem;
+      white-space: nowrap;
+    }
   }
 
   .site-shell {
