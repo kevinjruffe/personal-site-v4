@@ -30,7 +30,10 @@ const socialImageUrl = new URL(logo.src, Astro.site ?? Astro.url).toString();
   <head>
     <meta charset="utf-8" />
     <link rel="icon" href="/favicon.ico" sizes="any" />
-    <meta name="viewport" content="width=device-width" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={description} />
     <link rel="canonical" href={canonicalUrl.href} />
@@ -142,7 +145,8 @@ const socialImageUrl = new URL(logo.src, Astro.site ?? Astro.url).toString();
     flex: 1;
     margin: 0 auto;
     max-width: var(--content-max-width);
-    padding: 1.5rem 1rem 3rem;
+    padding: 1.5rem max(1rem, env(safe-area-inset-right)) 3rem
+      max(1rem, env(safe-area-inset-left));
     width: 100%;
   }
 
@@ -155,8 +159,8 @@ const socialImageUrl = new URL(logo.src, Astro.site ?? Astro.url).toString();
 
   @media (min-width: 48rem) {
     .site-content {
-      padding-left: 1.5rem;
-      padding-right: 1.5rem;
+      padding-left: max(1.5rem, env(safe-area-inset-left));
+      padding-right: max(1.5rem, env(safe-area-inset-right));
     }
   }
 </style>

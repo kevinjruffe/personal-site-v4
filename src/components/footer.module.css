@@ -1,7 +1,7 @@
 .site-footer {
   border-top: 2px solid #7ba583;
   color: #215144;
-  padding: 1.5rem 1rem;
+  padding: 1.5rem max(1rem, env(safe-area-inset-right)) 1.5rem max(1rem, env(safe-area-inset-left));
   text-align: center;
   background-color: #fff;
 }
