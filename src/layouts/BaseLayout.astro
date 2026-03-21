@@ -128,6 +128,8 @@ const socialImageUrl = new URL(logo.src, Astro.site ?? Astro.url).toString();
       "Liberation Mono", "Courier New", monospace;
     color: #303030;
     line-height: 1.6;
+    max-width: 100%;
+    overflow-x: auto;
   }
 
   .site-shell {
