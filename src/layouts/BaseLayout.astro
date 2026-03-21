@@ -160,6 +160,20 @@ const socialImageUrl = new URL(logo.src, Astro.site ?? Astro.url).toString();
     border-radius: 999px;
   }
 
+  :global(.video-embed) {
+    aspect-ratio: 16 / 9;
+    margin: 1.5rem 0;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  :global(.video-embed iframe) {
+    border: 0;
+    display: block;
+    height: 100%;
+    width: 100%;
+  }
+
   @media (max-width: 32rem) {
     :global(pre) {
       padding-top: 2.75rem;
