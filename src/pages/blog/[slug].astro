@@ -19,6 +19,8 @@ const { Content } = await render(post);
 <BaseLayout
   title={`${post.data.title} | KevinRuffe.com`}
   description={post.data.description}
+  ogType="article"
+  publishedTime={post.data.pubDate.toISOString()}
 >
   <BlogPost post={post} isNonIndexPage={true}>
     <Content />

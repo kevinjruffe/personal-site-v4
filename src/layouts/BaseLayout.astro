@@ -8,13 +8,22 @@ interface Props {
   contentMaxWidth?: string;
   title?: string;
   description?: string;
+  noindex?: boolean;
+  ogType?: "article" | "website";
+  publishedTime?: string;
 }
 
 const {
   contentMaxWidth = "65ch",
   title = "KevinRuffe.com",
   description = "Personal website of Kevin Ruffe",
+  noindex = false,
+  ogType = "website",
+  publishedTime,
 } = Astro.props;
+
+const canonicalUrl = Astro.url;
+const socialImageUrl = new URL(logo.src, Astro.site ?? Astro.url).toString();
 ---
 
 <html lang="en">
@@ -24,6 +33,24 @@ const {
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl.href} />
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
+    <meta property="og:site_name" content="KevinRuffe.com" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content={ogType} />
+    <meta property="og:url" content={canonicalUrl.href} />
+    <meta property="og:image" content={socialImageUrl} />
+    <meta property="og:image:width" content={logo.width.toString()} />
+    <meta property="og:image:height" content={logo.height.toString()} />
+    <meta property="og:image:alt" content="KevinRuffe.com logo" />
+    {publishedTime && (
+      <meta property="article:published_time" content={publishedTime} />
+    )}
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={socialImageUrl} />
     <title>{title}</title>
     <slot name="head" />
   </head>
