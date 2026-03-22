@@ -29,7 +29,12 @@
   display: inline-block;
   font-size: 1.75rem;
   line-height: 1;
-  padding: 0.1rem 0.35rem;
+  /*
+  Because the symbol used sits lower than normal text, we compensate with extra
+  padding on the bottom to keep it looking centered when the background
+  highlights on hover.
+  */
+  padding: 0.1rem 0.35rem 0.3rem 0.35rem;
   text-decoration: none;
   transition:
     background-color 180ms ease,
