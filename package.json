@@ -10,6 +10,8 @@
     "lint": "oxlint",
     "lint:fix": "oxlint --fix",
     "preview": "astro preview",
+    "test:e2e": "playwright test",
+    "test:e2e:headed": "playwright test --headed",
     "type-check": "tsc --noEmit"
   },
   "dependencies": {
@@ -20,6 +22,7 @@
     "react-dom": "^19.2.4"
   },
   "devDependencies": {
+    "@playwright/test": "^1.53.2",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
     "oxfmt": "^0.41.0",

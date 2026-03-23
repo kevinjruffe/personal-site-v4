@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Styles from "./siteNav.module.css";
 
 const links = [
@@ -7,8 +7,29 @@ const links = [
   { href: "/resume", label: "Resume" },
 ];
 
+const desktopMediaQuery = "(min-width: 48rem)";
+
 export default function SiteNav() {
+  const [isDesktop, setIsDesktop] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(() => {
+    const mediaQueryList = window.matchMedia(desktopMediaQuery);
+
+    function syncNavigationState(eventOrList: MediaQueryList | MediaQueryListEvent) {
+      const matches = eventOrList.matches;
+
+      setIsDesktop(matches);
+      setIsOpen(matches);
+    }
+
+    syncNavigationState(mediaQueryList);
+
+    const handleChange = (event: MediaQueryListEvent) => syncNavigationState(event);
+    mediaQueryList.addEventListener("change", handleChange);
+
+    return () => mediaQueryList.removeEventListener("change", handleChange);
+  }, []);
 
   return (
     <div className={Styles["nav-shell"]}>
@@ -33,8 +54,8 @@ export default function SiteNav() {
         className={Styles["nav-menu"]}
         data-open={isOpen ? "true" : "false"}
         aria-label="Primary"
-        aria-hidden={isOpen ? undefined : true}
-        hidden={!isOpen}
+        aria-hidden={!isDesktop && !isOpen ? true : undefined}
+        hidden={!isDesktop && !isOpen}
       >
         <ul className={Styles["nav-list"]}>
           {links.map((link) => (
