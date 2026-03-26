@@ -3,13 +3,8 @@ import type { GetStaticPaths, InferGetStaticPropsType } from "astro";
 import { getCollection } from "astro:content";
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import BlogPaginationActions from "../../../components/blogPaginationActions";
-import BlogPosts from "../../../components/blogPosts";
-import {
-  getAllTags,
-  getPostContents,
-  getPostsByTag,
-  sortBlogPosts,
-} from "../../../utils/blog";
+import BlogPosts from "../../../components/blogPosts.astro";
+import { getAllTags, getPostsByTag, sortBlogPosts } from "../../../utils/blog";
 
 export const getStaticPaths = (async ({ paginate }) => {
   const posts = sortBlogPosts(await getCollection("blog"));
@@ -28,8 +23,6 @@ type Props = InferGetStaticPropsType<typeof getStaticPaths>;
 
 const { page, tag }: Props = Astro.props;
 
-const postContents = getPostContents(page.data);
-
 const title =
   page.currentPage === 1
     ? `Topic: ${tag} | KevinRuffe.com`
@@ -41,6 +34,6 @@ const title =
   <p>
     Posts filed under <a href="/tags/">all topics</a> / {tag}.
   </p>
-  <BlogPosts posts={page.data} postContents={postContents} />
+  <BlogPosts posts={page.data} />
   <BlogPaginationActions page={page} />
 </BaseLayout>

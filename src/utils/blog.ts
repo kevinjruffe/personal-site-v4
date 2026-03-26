@@ -15,10 +15,6 @@ export function getPostsByTag(posts: BlogPost[], tag: BlogTag) {
   return posts.filter((post) => post.data.tags.includes(tag));
 }
 
-export function getPostContents(posts: BlogPost[]) {
-  return Object.fromEntries(posts.map((post) => [post.id, post.rendered?.html ?? ""]));
-}
-
 export function sortBlogPosts(posts: BlogPost[]) {
   return posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 }
