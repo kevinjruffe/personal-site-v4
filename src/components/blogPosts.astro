@@ -1,0 +1,30 @@
+---
+import { render, type CollectionEntry } from "astro:content";
+import BlogPost from "./blogPost";
+import Styles from "./blogPosts.module.css";
+
+type Props = {
+  posts: CollectionEntry<"blog">[];
+};
+
+const { posts } = Astro.props;
+
+const renderedPosts = await Promise.all(
+  posts.map(async (post) => ({
+    post,
+    Content: (await render(post)).Content,
+  })),
+);
+---
+
+<ol class={Styles["post-list"]}>
+  {
+    renderedPosts.map(({ post, Content }) => (
+      <li class={Styles["post-list-item"]}>
+        <BlogPost post={post}>
+          <Content />
+        </BlogPost>
+      </li>
+    ))
+  }
+</ol>
