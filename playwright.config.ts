@@ -1,5 +1,9 @@
 import { defineConfig, devices } from "@playwright/test";
 
+declare const process: {
+  env: Record<string, string | undefined>;
+};
+
 const host = "127.0.0.1";
 const port = 4321;
 const baseURL = `http://${host}:${port}`;
