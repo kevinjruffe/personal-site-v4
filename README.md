@@ -17,4 +17,6 @@ I've been a heavy user of GitHub Copilot, ChatGPT/Gemini/Claude, but I hadn't do
 - `lint`: lint the code
 - `lint:fix`: lint and correct findings
 - `preview`: serve the static site output by `build`
+- `test:e2e`: end-to-end tests in playwright
+- `test:e2e:headed`: end-to-end tests in playwright in a headed browswer
 - `type-check`: check for TS errors
